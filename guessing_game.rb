@@ -1,5 +1,14 @@
 random = rand(100)
 g_array = Array.new
+
+def guess(message, guess)
+  puts "You guessed #{message}, try again."
+  guess = gets.chomp.to_i
+  g.array << guess
+
+  return guess
+end
+
 puts "Guess a whole number between 1-100"
 
 guess = gets.chomp.to_i
