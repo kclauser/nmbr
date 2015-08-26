@@ -1,33 +1,30 @@
 random = rand(100)
+puts random
 g_array = Array.new
 
-def guess(message, guess)
-  puts "You guessed #{message}, try again."
-  guess = gets.chomp.to_i
-  g.array << guess
+def placeholder(message, array)
+  puts message
+  gnum = gets.chomp.to_i
+  array << gnum
 
-  return guess
+  return gnum
 end
 
-puts "Guess a whole number between 1-100"
-
-guess = gets.chomp.to_i
-g_array << guess
+guess = placeholder("Guess a whole number between 1-100", g_array)
+# puts "Guess a whole number between 1-100"
+# gnum = gets.chomp.to_i
+# g_array << gnum
 
 while g_array.length < 5
   if guess == random
     puts "Congratulations! You are almost as smart as me!"
-    break
+  exit
 
   elsif guess > random
-    puts "You guessed too high, try again."
-    guess = gets.chomp.to_i
-    g_array << guess
+    guess = placeholder("You guessed #{guess}, too high.", g_array)
 
   else guess < random
-    puts "You guessed too low, try again."
-    guess = gets.chomp.to_i
-    g_array << guess
+    guess = placeholder("You guessed #{guess}, too low.", g_array)
 
   end
 end
