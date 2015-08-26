@@ -4,8 +4,10 @@ puts "Guess a whole number between 1-100"
 guess = gets.chomp.to_i
 
 while true
-  if random == guess
+  if guess == random
     puts "Congratulations! You are almost as smart as me!"
     break
 
-  # elsif random > guess 
+  elsif guess > random
+    puts "You guessed too high, try again."
+    guess = gets.chomp.to_i
